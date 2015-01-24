@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ STATIC_URL }}smh_gallery/foundation/stylesheets/foundation.min.css">
+{% endblock %}
+
+{% block one_column %}
+<h1>{{gallery.name}}</h1>
+<p class="lead">{{gallery.description}}</p>
+
+<ul>
+{% for video in videos %}
+  <li class="span3">
+    <a href="{{video.video.url}}" title="{{video.name}}" target="_blank">
+		{{video.name}} | Download 
+    </a>
+  </li>
+{% endfor %}
+</ul>
+{% endblock %}
+
+{% block js %}
+<script src="{{ STATIC_URL }}smh_gallery/foundation/javascripts/foundation.min.js"></script>
+<script src="{{ STATIC_URL }}smh_gallery/foundation/javascripts/app.js"></script>
+<script src="{{ STATIC_URL }}smh_gallery/js/js-smh_colorgray1.js"></script>
+        
+{% endblock %}

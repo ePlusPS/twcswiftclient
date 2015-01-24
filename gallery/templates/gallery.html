@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ STATIC_URL }}smh_gallery/foundation/stylesheets/foundation.min.css">
+{% endblock %}
+
+{% block one_column %}
+<h1>{{gallery.name}}</h1>
+<p class="lead">{{gallery.description}}</p>
+
+<ul class="thumbnails" data-clearing>
+{% for image in images %}
+  <li class="span3">
+    <a href="{{image.image.url}}" class="thumbnail" title="{{image.name}}">
+      <img data-permalink="{% url 'smh_gallery_image' gallery.slug image.slug %}" data-caption="{{image.name}}" src="{{image.image.url_370x229}}" alt="{{image.name}}" class="img_color-gray img-rounded">
+    </a>
+  </li>
+{% endfor %}
+</ul>
+{% endblock %}
+
+{% block js %}
+<script src="{{ STATIC_URL }}smh_gallery/foundation/javascripts/foundation.min.js"></script>
+<script src="{{ STATIC_URL }}smh_gallery/foundation/javascripts/app.js"></script>
+<script src="{{ STATIC_URL }}smh_gallery/js/js-smh_colorgray.js"></script>
+{% endblock %}
