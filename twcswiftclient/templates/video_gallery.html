@@ -5,16 +5,35 @@
 {% endblock %}
 
 {% block one_column %}
-<h1>{{gallery.name}}</h1>
+<h1>Video Gallery</h1>
+<h4>{{gallery.name}}</h4>
 <p class="lead">{{gallery.description}}</p>
 
 <ul>
 {% for video in videos %}
-  <li class="span3">
+	<!-- <li class="span3"> -->
+	<table><tr><td>
     <a href="{{video.video.url}}" title="{{video.name}}" target="_blank">
-		{{video.name}} | Download 
-    </a>
-  </li>
+				{{video.name}} | Download 
+  </a>
+    </td>
+    <td>
+    <div class="span5">
+        <h2>{{video.name}}</h2>
+        <h4>{{video.date}}</h4>
+        <p class="lead">{{video.description}}<p>
+		<h4>Public URL from TWC Cloud:</h4>
+		<hr>
+		<small>{{video.video.url}}</small>
+		<hr>
+		
+    </div>
+
+    
+    </td>
+    </tr></table>
+  <!-- </li> -->
+
 {% endfor %}
 </ul>
 {% endblock %}
