@@ -4,17 +4,21 @@ Storing Images &amp; Videos to Openstack Cloud Storage using Swift Client
 
 ##Installation Steps:
 
-**1. Pull the code from Repo**
+**1. Pull the code from Repo :**
+
 git clone https://github.com/gopal1cloud/twcswiftclient.git
 
-**2. Get into Project Folder**
+**2. Get into Project Folder :**
+
 $ cd twcswiftclient/
 
-**3. Install Dependencies from requirement file**
+**3. Install Dependencies from requirement file :**
+
 $ pip install -r requirement.txt 
 
 
-**4. Modify Openstack Cloud configuration on settings file:**
+**4. Modify Openstack Cloud configuration on settings file :**
+
 $ vim twcswiftclient/settings.py
 
 ## Configuring
@@ -61,11 +65,17 @@ $ python manage.py syncdb
 
 While running Syncdb first time,
 (Django auth system asks for the Superusers:)
+
 You have installed Django's auth system, and don't have any superusers defined.
+
 Would you like to create one now? (yes/no): yes
+
 Username (leave blank to use 'admin'): admin
+
 Email address: admin@demo.com
+
 Password: *****
+
 Password (again): *****
 
 **6. Collecting static media files to server :**
@@ -80,3 +90,9 @@ Type 'yes' to continue, or 'no' to cancel: yes
 **7. Running Django Development Server :**
 
 $ python manage.py runserver
+
+**8. Access the development server specifying the IP in the browser:**
+
+http://127.0.0.1:8000/  
+
+Thats it!!
