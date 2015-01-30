@@ -59,40 +59,26 @@ Temporary URLs provide a means to grant a user permission to access a file for a
 
 Temporary URLs work as described in the Swift documentation. (The code to generate the signatures is heavily based on their implementation.) They require setup of a key for signing: the process is described in [the OpenStack documentation][openstack-tempurl].
 
-**5. Creating Tables on the Database with syncdb command :**
+**5. Creating Initial Tables on the Database with syncdb command :**
 
-$ python manage.py syncdb
+$ python manage.py syncdb --noinput
 
-While running Syncdb first time,
-(Django auth system asks for the Superusers:)
+**6. Creating Admin/Superuser for Application :**
 
-You have installed Django's auth system, and don't have any superusers defined.
+$ echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@demo.com', 'admin')" | ./manage.py shell
 
-Would you like to create one now? (yes/no): yes
+(**Note: modify your admin credentials** create_superuser(username, emailid, password) )
 
-Username (leave blank to use 'admin'): admin
+**7. Collecting static media files to server :**
 
-Email address: admin@demo.com
+$ python manage.py collectstatic --noinput
 
-Password: *****
+**8. Running Django Development Server :**
 
-Password (again): *****
+$ python manage.py runserver 0.0.0.0:8000
 
-**6. Collecting static media files to server :**
+**9. Access the development server specifying the IP in the browser:**
 
-$ python manage.py collectstatic
-
-This will overwrite existing files!
-Are you sure you want to do this?
-
-Type 'yes' to continue, or 'no' to cancel: yes
-
-**7. Running Django Development Server :**
-
-$ python manage.py runserver
-
-**8. Access the development server specifying the IP in the browser:**
-
-http://127.0.0.1:8000/  
+http://IP ADDRESS:8000/  
 
 Thats it!!
