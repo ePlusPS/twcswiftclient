@@ -73,12 +73,23 @@ $ echo "from django.contrib.auth.models import User; User.objects.create_superus
 
 $ python manage.py collectstatic --noinput
 
-**8. Running Django Development Server :**
+**8. Running Django Development Server:**
+
+**Manual Run:**
 
 $ python manage.py runserver 0.0.0.0:8000
+
+**Run through Deployment Script:**
+
+**Note:** If you want running the Development server in Backend, Run deploy.sh from project folder.
+
+$ ./deploy.sh
+
+**This script will initiate the development server in backend and raise the application on your IP ADDRESS with port 8000**
 
 **9. Access the development server specifying the IP in the browser:**
 
 http://IP ADDRESS:8000/  
+
 
 Thats it!!
